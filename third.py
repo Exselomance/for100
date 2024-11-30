@@ -1,11 +1,8 @@
-tasks = [
-    (0, 3, 10, 1),
-    (1, 2, 8, 2),
-    (3, 4, 12, 3),
-    (5, 1, 6, 4),
-    (7, 5, 15, 5),
-]
-
+tasks = []
+with open("tasks3.txt", "r") as file:
+    for line in file:
+        R_i, C_i, T_i, task_id = map(int, line.split())
+        tasks.append((R_i, C_i, T_i, task_id))
 tasks.sort()
 
 time = 0

@@ -1,10 +1,8 @@
-tasks = [
-    (0, 2, 5, 1),
-    (2, 3, 8, 2),
-    (4, 1, 6, 3),
-    (6, 4, 10, 4),
-    (7, 2, 9, 5),
-]
+tasks = []
+with open("tasks2.txt", "r") as file:
+    for line in file:
+        R_i, C_i, T_i, task_id = map(int, line.split())
+        tasks.append((R_i, C_i, T_i, task_id))
 
 tasks.sort()
 
@@ -13,6 +11,7 @@ queue = []
 missed_tasks = []
 
 for task in tasks:
+    # для каждой задачи
     R_i, C_i, T_i, task_id = task
 
     while queue and time < R_i:
